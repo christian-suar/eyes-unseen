@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1709525514
+icon.svg::CompressedTexture2D::4246164799102523886::1709447170::1709447174::1::::<><>::
+shape_blur.tscn::PackedScene::8418925031162949044::1709525497::0::1::::<><>::
+temp_player.gd::GDScript::-1::1709452223::0::1::::<>CharacterBody3D<>::
+::res://scenes/::1709525296
+house.tscn::PackedScene::2473510233031057419::1709525295::0::1::::<><>::uid://doxlf84fpy8ko::::res://scenes/temp_player.tscn
+temp_player.tscn::PackedScene::8190065144563173750::1709525296::0::1::::<><>::res://temp_player.gd

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr7gp2254ar6c"]
+
+[ext_resource type="Shader" path="res://transparency.gdshader" id="1_sovq2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pi085"]
+render_priority = 0
+shader = ExtResource("1_sovq2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6kfc2"]
+render_priority = 0
+shader = ExtResource("1_sovq2")
+
+[node name="ShapeBlur" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+cast_shadow = 0
+flip_faces = true
+material = SubResource("ShaderMaterial_pi085")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+cast_shadow = 0
+gi_mode = 0
+calculate_tangents = false
+flip_faces = true
+material = SubResource("ShaderMaterial_6kfc2")
