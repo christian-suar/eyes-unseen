@@ -1,8 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709525514
+::res://::1709527489
 icon.svg::CompressedTexture2D::4246164799102523886::1709447170::1709447174::1::::<><>::
-shape_blur.tscn::PackedScene::8418925031162949044::1709525497::0::1::::<><>::
+README.md::TextFile::-1::1709527468::0::1::::<><>::
+shape_blur.tscn::PackedScene::8418925031162949044::1709527381::0::1::::<><>::res://transparency.gdshader
 temp_player.gd::GDScript::-1::1709452223::0::1::::<>CharacterBody3D<>::
-::res://scenes/::1709525296
-house.tscn::PackedScene::2473510233031057419::1709525295::0::1::::<><>::uid://doxlf84fpy8ko::::res://scenes/temp_player.tscn
-temp_player.tscn::PackedScene::8190065144563173750::1709525296::0::1::::<><>::res://temp_player.gd
+transparency.gdshader::Shader::-1::1709527428::0::1::::<><>::
+::res://material/::1709527424
+shape_blur.tscn::PackedScene::6911297350081427342::1709527424::0::1::::<><>::res://transparency.gdshader
+::res://scenes/::1709527415
+house.tscn::PackedScene::2473510233031057419::1709527275::0::1::::<><>::uid://doxlf84fpy8ko::::res://scenes/temp_player.tscn
+temp_player.tscn::PackedScene::8190065144563173750::1709527415::0::1::::<><>::res://temp_player.gd

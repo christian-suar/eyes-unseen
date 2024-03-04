@@ -1,5 +1,2 @@
-res://transparency.gdshader
-res://shape_blur.tscn
-res://scenes/house.tscn
-res://scenes/temp_player.tscn
 res://material/shape_blur.tscn
+res://transparency.gdshader
