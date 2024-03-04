@@ -12,5 +12,7 @@ material = SubResource("ShaderMaterial_1kiyg")
 [node name="material" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999435, 0, 0, 0, 0.999435, 0, 0, 0, 0.999435, 0, 0, 0)
+transparency = 1.0
+cast_shadow = 0
+gi_mode = 0
 mesh = SubResource("SphereMesh_0rit6")

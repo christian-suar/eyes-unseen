@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbigl8dbutoa2"]
+[gd_scene load_steps=7 format=3 uid="uid://bbigl8dbutoa2"]
 
 [ext_resource type="PackedScene" uid="uid://doxlf84fpy8ko" path="res://scenes/temp_player.tscn" id="1_faaw3"]
 
@@ -14,6 +14,12 @@ background_mode = 2
 sky = SubResource("Sky_f5156")
 tonemap_mode = 2
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_wxuh5"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.3
+dof_blur_near_distance = 4.18
+dof_blur_amount = 0.15
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eohih"]
 albedo_color = Color(0.211765, 0.360784, 0.27451, 1)
 emission = Color(0.937255, 0.937255, 0.937255, 1)
@@ -27,6 +33,7 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dpu7k")
+camera_attributes = SubResource("CameraAttributesPractical_wxuh5")
 
 [node name="CSGBox3DFloor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.463539, 0)
@@ -36,3 +43,6 @@ size = Vector3(32, 1, 32)
 
 [node name="TempPlayer" parent="." instance=ExtResource("1_faaw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33119, 2.77692, -1.55242)

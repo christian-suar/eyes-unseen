@@ -20,4 +20,3 @@ shape = SubResource("ConvexPolygonShape3D_ixtoa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.464368, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
-fov = 37.8493
