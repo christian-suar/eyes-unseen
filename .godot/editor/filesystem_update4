@@ -3,4 +3,8 @@ res://transparency.gdshader
 res://scenes/temp_player.tscn
 res://shape_blur.tscn
 res://material/shape_blur.tscn
-res://temp_player.gd
+res://sliders/blur_slider.tscn
+res://scenes/pause_menu.gd
+res://scenes/pause_menu.tscn
+res://scenes/game.gd
+res://scenes/game.tscn
