@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwstcve8hqqyx"]
+
+[ext_resource type="Script" path="res://DOFBlur.gd" id="1_i6sma"]
+
+[node name="DOFBlur" type="Node"]
+script = ExtResource("1_i6sma")

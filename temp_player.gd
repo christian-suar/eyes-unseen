@@ -20,6 +20,12 @@ var t_bob = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#dof blur
+	var dof_blur = preload("res://singlenode/dof_blur.tscn").new()
+	var dof_strength = dof_blur.dof_blur_strength
+	apply_dof_blur(dof_strengths)
+	
+	
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:

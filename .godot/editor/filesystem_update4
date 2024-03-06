@@ -5,3 +5,6 @@ res://sliders/blur_slider.tscn
 res://scenes/pause_menu.tscn
 res://temp_player.gd
 res://scenes/pause_menu.gd
+res://DOFBlur.gd
+res://scenes/WorldEnvironment.gd
+res://sliders/HSlider.gd

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckv8rcvtsmmsm"]
+[gd_scene load_steps=3 format=3 uid="uid://ckv8rcvtsmmsm"]
 
 [ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_uxbfk"]
+[ext_resource type="PackedScene" uid="uid://cp1ndlafsq2mm" path="res://sliders/blur_slider.tscn" id="2_sdhyg"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -58,6 +59,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "EXIT
 "
+
+[node name="BlurSlider" parent="Panel/VBoxContainer" instance=ExtResource("2_sdhyg")]
+position = Vector2(-402, -103)
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BlurSlider"]
+offset_left = 85.0
+offset_top = -50.0
+offset_right = 166.0
+offset_bottom = -27.0
+text = "Blur Slider"
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

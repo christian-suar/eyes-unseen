@@ -1,5 +1,6 @@
-Button
+Node
 Label
+Button
 VBoxContainer
 Panel
 Control
@@ -12,4 +13,3 @@ Node3D
 CSGMesh3D
 TextureRect
 Camera3D
-CharacterBody3D

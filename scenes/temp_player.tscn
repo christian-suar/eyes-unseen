@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://doxlf84fpy8ko"]
+[gd_scene load_steps=9 format=3 uid="uid://doxlf84fpy8ko"]
 
 [ext_resource type="Script" path="res://temp_player.gd" id="1_ofada"]
+[ext_resource type="Script" path="res://scenes/WorldEnvironment.gd" id="2_dv44j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ut32g"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,6 +29,7 @@ script = ExtResource("1_ofada")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3p3a2")
 camera_attributes = SubResource("CameraAttributesPractical_tuqe8")
+script = ExtResource("2_dv44j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_b1fkt")
