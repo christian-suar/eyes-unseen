@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 4.5
 
 
 var gravity = 12
-var sensitivity = 0.002
+var sensitivity = 0.004
 # bob is short for bobble (camera bobble) 
 # freq is how frequent the bobble happens
 # amp is how much the camera moves (short for amplitude)
@@ -66,14 +66,15 @@ func _physics_process(delta):
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 	
 	
-	#frames
-	print("Frames: " + str(Engine.get_frames_per_second()))
+
 	
 	#head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	head_camera.transform.origin = _headbob(t_bob)
 	move_and_slide()
-
+	
+	#frames
+	print("Frames: " + str(Engine.get_frames_per_second()))
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * bob_freq) * bob_amp

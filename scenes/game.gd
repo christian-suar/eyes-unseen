@@ -1,5 +1,5 @@
 extends Node3D
-
+@onready var game_node = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,13 +20,14 @@ func _toggle_pause_menu(show):
 	
 	if show:
 		var pause_menu = preload("res://scenes/pause_menu.tscn").instantiate()
-		add_child(pause_menu)
+		get_parent().add_child(pause_menu)
 		
 	else:
-		# Remove the pause menu (if it exists)
-		var existing_pause_menu = get_node("PauseMenu")
-		if existing_pause_menu:
-			existing_pause_menu.queue_free()
+		# Remove the pause menu 
+		var exists = get_node("PauseMenu")
+		if exists:
+			exists.queue_free()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

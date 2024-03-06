@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://doxlf84fpy8ko"]
+[gd_scene load_steps=8 format=3 uid="uid://doxlf84fpy8ko"]
 
 [ext_resource type="Script" path="res://temp_player.gd" id="1_ofada"]
-[ext_resource type="PackedScene" uid="uid://cp1ndlafsq2mm" path="res://sliders/blur_slider.tscn" id="2_88nkq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ut32g"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -41,6 +40,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.464368, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 far = 2000.0
-
-[node name="BlurSlider" parent="." instance=ExtResource("2_88nkq")]
-position = Vector2(1096, 402)
