@@ -1,3 +1,5 @@
+CheckButton
+CheckBox
 Node
 WorldEnvironment
 Label
@@ -11,4 +13,3 @@ CSGBox3D
 MeshInstance3D
 Node3D
 CSGMesh3D
-TextureRect

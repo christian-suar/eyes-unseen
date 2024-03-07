@@ -82,7 +82,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	#frames
-	print("Frames: " + str(Engine.get_frames_per_second()))
+	#print("Frames: " + str(Engine.get_frames_per_second()))
 	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
