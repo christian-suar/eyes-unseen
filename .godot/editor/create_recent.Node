@@ -1,10 +1,10 @@
 Node
+WorldEnvironment
 Label
 Button
 VBoxContainer
 Panel
 Control
-WorldEnvironment
 HSlider
 CanvasLayer
 CSGBox3D
@@ -12,4 +12,3 @@ MeshInstance3D
 Node3D
 CSGMesh3D
 TextureRect
-Camera3D

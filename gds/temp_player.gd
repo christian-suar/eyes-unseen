@@ -15,15 +15,17 @@ const bob_freq = 2.5
 const bob_amp = 0.08
 var t_bob = 0.0
 
+
+
 @onready var head = $Node3D
 @onready var head_camera = $Node3D/Camera3D
-
+@onready var camera = $Node3D/Camera3D
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#dof blur
-	var dof_blur = preload("res://singlenode/dof_blur.tscn").new()
+
+	var dof_blur = preload("res://singlenode/dof_blur.tscn").instantiate()
 	var dof_strength = dof_blur.dof_blur_strength
-	apply_dof_blur(dof_strengths)
+	change_blur(dof_strength)
 	
 	
 
@@ -81,8 +83,18 @@ func _physics_process(delta):
 	
 	#frames
 	print("Frames: " + str(Engine.get_frames_per_second()))
+	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * bob_freq) * bob_amp
 	pos.x = cos(time * bob_freq/2) * bob_amp
 	return pos
+
+
+func change_blur(strength):
+	camera.attributes.dof_blur_far_enabled = true
+	camera.attributes.dof_blur_amount = strength
+
+
+
+

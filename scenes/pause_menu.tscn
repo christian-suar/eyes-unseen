@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckv8rcvtsmmsm"]
 
-[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_uxbfk"]
+[ext_resource type="Script" path="res://gds/pause_menu.gd" id="1_vo8dy"]
 [ext_resource type="PackedScene" uid="uid://cp1ndlafsq2mm" path="res://sliders/blur_slider.tscn" id="2_sdhyg"]
 
 [node name="PauseMenu" type="Control"]
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uxbfk")
+script = ExtResource("1_vo8dy")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

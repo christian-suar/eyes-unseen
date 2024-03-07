@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbigl8dbutoa2"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_5fhw6"]
+[ext_resource type="Script" path="res://gds/game.gd" id="1_5fhw6"]
 [ext_resource type="PackedScene" uid="uid://doxlf84fpy8ko" path="res://scenes/temp_player.tscn" id="2_fd825"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eohih"]
