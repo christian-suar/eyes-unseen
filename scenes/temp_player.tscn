@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://doxlf84fpy8ko"]
+[gd_scene load_steps=8 format=3 uid="uid://doxlf84fpy8ko"]
 
 [ext_resource type="Script" path="res://gds/temp_player.gd" id="1_ofada"]
 [ext_resource type="Script" path="res://gds/Node3D.gd" id="2_qym0j"]
@@ -13,6 +13,13 @@ dof_blur_far_enabled = true
 dof_blur_far_distance = 0.5
 dof_blur_far_transition = 1.0
 dof_blur_amount = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juhfh"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.356863)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ohwx7"]
+material = SubResource("StandardMaterial3D_juhfh")
 
 [node name="TempPlayer" type="CharacterBody3D"]
 script = ExtResource("1_ofada")
@@ -30,3 +37,15 @@ script = ExtResource("2_qym0j")
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 attributes = SubResource("CameraAttributesPractical_nyhxd")
 far = 2000.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.0272064, 0.99963, 0, -0.99963, 0.0272064, 0, 0.031244, -1.43233)
+mesh = SubResource("CylinderMesh_ohwx7")
+skeleton = NodePath("../..")
+
+[node name="RayCast3D" type="RayCast3D" parent="Node3D/Camera3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.75443e-08, 0, -8.75443e-08, -1, 0, -0.0125368, -0.0073511)
+visibility_parent = NodePath("..")
+target_position = Vector3(0, -5, 0)
+debug_shape_custom_color = Color(0.768627, 0.133333, 0.823529, 1)
+debug_shape_thickness = 5
