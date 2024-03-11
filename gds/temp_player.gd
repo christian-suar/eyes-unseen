@@ -20,6 +20,10 @@ var t_bob = 0.0
 @onready var head = $Node3D
 @onready var head_camera = $Node3D/Camera3D
 @onready var camera = $Node3D/Camera3D
+@onready var raycast = $Node3D/Camera3D/MeshInstance3D/RayCast3D
+
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

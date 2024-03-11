@@ -1,4 +1,7 @@
+CollisionShape3D
+Area3D
 MeshInstance3D
+CharacterBody3D
 RayCast3D
 CheckButton
 CheckBox
@@ -10,5 +13,3 @@ VBoxContainer
 Panel
 Control
 HSlider
-CanvasLayer
-CSGBox3D

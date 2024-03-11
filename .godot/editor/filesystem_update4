@@ -1,13 +1,10 @@
+res://singlenode/settings.tscn
+res://scenes/enemy_1.tscn
 res://scenes/game.tscn
 res://scenes/temp_player.tscn
 res://scenes/pause_menu.tscn
 res://sliders/blur_slider.tscn
 res://singlenode/globals.tscn
-res://singlenode/settings.tscn
-res://scenes/Node3D.gd
-res://gds/temp_player.gd
-res://gds/pause_menu.gd
-res://scenes/CheckButton.gd
-res://gds/Node3D.gd
-res://Settings.gd
 res://singlenode/dof_blur.tscn
+res://scenes/enemy_1.gd
+res://gds/temp_player.gd
