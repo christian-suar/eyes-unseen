@@ -3,10 +3,10 @@ extends CharacterBody3D
 var speed
 const SPRINT_SPEED = 7.5 
 const WALK_SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+# const JUMP_VELOCITY = 4.5
 
 
-var gravity = 12
+var gravity = 9.8
 var sensitivity = 0.004
 # bob is short for bobble (camera bobble) 
 # freq is how frequent the bobble happens
@@ -53,8 +53,8 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	# if Input.is_action_just_pressed("jump") and is_on_floor():
+		# velocity.y = JUMP_VELOCITY
 
 	# Handle Sprint
 	if Input.is_action_pressed("sprint"):

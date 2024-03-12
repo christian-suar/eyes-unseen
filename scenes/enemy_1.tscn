@@ -17,7 +17,7 @@ points = PackedVector3Array(0.457871, 0.198079, 0.0157824, -0.48874, -0.0916874,
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5phf"]
 
-[node name="Enemy1" type="CharacterBody3D"]
+[node name="Enemy1" type="CharacterBody3D" groups=["StatueEnemy"]]
 script = ExtResource("1_vwou8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -31,5 +31,6 @@ shape = SubResource("ConvexPolygonShape3D_6epit")
 transform = Transform3D(1.00338, 0, 0, 0, 1.00338, 0, 0, 0, 1.00338, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_l5phf")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

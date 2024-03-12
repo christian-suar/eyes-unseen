@@ -1,12 +1,16 @@
 extends Node3D
 
+@onready var player = $TempPlayer
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-
 		# Toggle pause mode when the user presses the pause key (e.g., Esc)
 		_toggle_pause_menu(show)
 		get_tree().paused = !get_tree().paused
@@ -30,4 +34,4 @@ func _toggle_pause_menu(show):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	get_tree().call_group("StatueEnemy","update_target_location", player.global_position)

@@ -1,8 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbigl8dbutoa2"]
+[gd_scene load_steps=9 format=3 uid="uid://bbigl8dbutoa2"]
 
 [ext_resource type="Script" path="res://gds/game.gd" id="1_5fhw6"]
 [ext_resource type="PackedScene" uid="uid://doxlf84fpy8ko" path="res://scenes/temp_player.tscn" id="2_fd825"]
 [ext_resource type="PackedScene" uid="uid://c8fd6mxpxsr8u" path="res://scenes/enemy_1.tscn" id="3_4k1jw"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_iia8s"]
+vertices = PackedVector3Array(3.25, 0.536461, -2.5, 4.25, 0.536461, -2.75, 4.25, 0.536461, -15.5, -15.5, 0.536461, -15.5, -15.5, 0.536461, -1.5, -15.5, 0.536461, -1.5, 3.25, 0.536461, -1.5, 3.25, 0.536461, -2.5, 5.25, 0.536461, -2.75, 5.5, 0.536461, -1.5, 15.5, 0.536461, -1.5, 15.5, 0.536461, -15.5, 4.25, 0.536461, -15.5, 4.25, 0.536461, -15.5, 4.25, 0.536461, -2.75, 5.25, 0.536461, -2.75, 4.25, 0.536461, 15.5, 4.25, 0.536461, -0.5, 3.25, 0.536461, -0.75, -15.5, 0.536461, -1.5, -15.5, 0.536461, 15.5, 3.25, 0.536461, -0.75, 3.25, 0.536461, -1.5, -15.5, 0.536461, -1.5, 15.5, 0.536461, -1.5, 5.5, 0.536461, -1.5, 5.25, 0.536461, -0.5, 4.25, 0.536461, 15.5, 15.5, 0.536461, 15.5, 5.25, 0.536461, -0.5, 4.25, 0.536461, -0.5, 4.25, 0.536461, 15.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(7, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 12), PackedInt32Array(15, 14, 13), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 20), PackedInt32Array(18, 20, 19), PackedInt32Array(23, 22, 21), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(31, 30, 29)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eohih"]
+albedo_color = Color(0.211765, 0.360784, 0.27451, 1)
+emission = Color(0.937255, 0.937255, 0.937255, 1)
+emission_energy_multiplier = 3.7
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6v0bu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,13 +25,21 @@ background_mode = 2
 sky = SubResource("Sky_4q0gx")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eohih"]
-albedo_color = Color(0.211765, 0.360784, 0.27451, 1)
-emission = Color(0.937255, 0.937255, 0.937255, 1)
-emission_energy_multiplier = 3.7
-
 [node name="Game" type="Node3D"]
 script = ExtResource("1_5fhw6")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_iia8s")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33119, 0.532972, -1.55242)
+use_collision = true
+
+[node name="CSGBox3DFloor" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.463539, 0)
+material_override = SubResource("StandardMaterial3D_eohih")
+use_collision = true
+size = Vector3(32, 1, 32)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_skmeg")
@@ -31,18 +48,8 @@ environment = SubResource("Environment_skmeg")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3DFloor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.463539, 0)
-material_override = SubResource("StandardMaterial3D_eohih")
-use_collision = true
-size = Vector3(32, 1, 32)
-
 [node name="TempPlayer" parent="." instance=ExtResource("2_fd825")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.82566)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33119, 0.532972, -1.55242)
-use_collision = true
 
 [node name="Enemy1" parent="." instance=ExtResource("3_4k1jw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.54413, 0.840661, 3.58696)
