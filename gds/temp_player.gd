@@ -99,6 +99,21 @@ func change_blur(strength):
 	camera.attributes.dof_blur_far_enabled = true
 	camera.attributes.dof_blur_amount = strength
 
+# detect enemy? 
 
+func _on_timer_timeout():
+	var overlaps = $Node3D/Camera3D/FOV.get_overlapping_bodies()
+	#check if enemy is there or not by going through the overlaps
+	for overlap in overlaps:
 
-
+		if overlap.is_in_group("StatueEnemy"):
+			var enemy_pos = overlap.global_position
+			$VisionRayTest.look_at(enemy_pos,Vector3.UP)
+			$VisionRayTest.force_raycast_update()
+			print("hearuoipasfhuoipdhuo")
+			if $VisionRayTest.is_colliding():
+				var collider = $VisionRayTest.get_collider()
+				if collider.is_in_group("StatueEnemy"):
+					print("i see")
+				else:
+					print("i dont")

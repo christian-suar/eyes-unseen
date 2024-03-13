@@ -15,8 +15,8 @@ dof_blur_far_distance = 0.5
 dof_blur_far_transition = 1.0
 dof_blur_amount = 0.0
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c5uiw"]
-points = PackedVector3Array(-0.000195742, 1, -0.000195742, 0.194988, -1, -0.980814, -0.000195742, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, -0.000195742, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, -0.382733, -1, 0.923845, -0.195184, -1, 0.980619, -0.000195742, -1, 1, 0.194988, -1, 0.980619, 0.382537, -1, 0.923845, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980619, -1, 0.194988, 1, -1, -0.000195742, 0.980619, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gd8kl"]
+points = PackedVector3Array(-0.896022, -0.955907, -0.388314, 0.0286088, 0.919081, 0.0286088, 0.0572855, 0.690129, 0.143754, 0.743815, -0.952232, -0.624879, 0.18069, -0.964436, 0.964436, -0.743864, -0.952296, 0.624921, 0.896009, -0.955893, 0.388308, -0.180872, -0.9644, -0.9644, 0.964436, -0.964436, -0.18069, -0.964436, -0.964436, 0.18069, -0.0286088, 0.919081, -0.0286088, -0.388308, -0.955893, 0.896009, 0.388314, -0.955907, -0.896022, -0.659999, -0.960203, -0.720152, 0.659976, -0.960171, 0.720128, 0.0286088, 0.919081, -0.0286088, -0.0286088, 0.919081, 0.0286088, -0.180872, -0.9644, 0.9644, 0.18069, -0.964436, -0.964436, 0.964436, -0.964436, 0.18069, -0.964436, -0.964436, -0.18069, -0.388314, -0.955907, -0.896022, 0.388308, -0.955893, 0.896009, 0.896009, -0.955893, -0.388308, -0.896022, -0.955907, 0.388314, 0.515753, -0.859528, -0.773539, -0.515576, -0.859533, 0.773544, -0.773539, -0.859528, -0.515753, 0.773412, -0.859387, 0.515668, 0.515668, -0.859387, 0.773412, -0.515661, -0.859674, -0.773671, 0.659999, -0.960203, -0.720152)
 
 [node name="TempPlayer" type="CharacterBody3D"]
 script = ExtResource("1_ofada")
@@ -35,11 +35,21 @@ script = ExtResource("2_qym0j")
 attributes = SubResource("CameraAttributesPractical_nyhxd")
 far = 2000.0
 
-[node name="FOV" type="Area3D" parent="Node3D"]
+[node name="FOV" type="Area3D" parent="Node3D/Camera3D"]
 
-[node name="Cone" parent="Node3D/FOV" instance=ExtResource("3_a0f54")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 10, 10, 10)
+[node name="Cone" parent="Node3D/Camera3D/FOV" instance=ExtResource("3_a0f54")]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 0, -5)
+visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FOV"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1)
-shape = SubResource("ConvexPolygonShape3D_c5uiw")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Camera3D/FOV"]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 0, -5)
+shape = SubResource("ConvexPolygonShape3D_gd8kl")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="VisionRayTest" type="RayCast3D" parent="."]
+target_position = Vector3(0, -1, -50)
+debug_shape_custom_color = Color(0.823529, 0, 0, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

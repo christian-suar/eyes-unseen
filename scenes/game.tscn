@@ -32,7 +32,7 @@ script = ExtResource("1_5fhw6")
 navigation_mesh = SubResource("NavigationMesh_iia8s")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33119, 0.532972, -1.55242)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.3881, 1.58231, -1.21185)
 use_collision = true
 
 [node name="CSGBox3DFloor" type="CSGBox3D" parent="NavigationRegion3D"]

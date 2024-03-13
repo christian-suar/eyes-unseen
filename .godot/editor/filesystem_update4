@@ -1,8 +1,9 @@
-res://scenes/enemy_1.tscn
-res://assets/cone.tscn
 res://scenes/temp_player.tscn
 res://scenes/game.tscn
 res://scenes/pause_menu.tscn
 res://sliders/blur_slider.tscn
 res://singlenode/globals.tscn
 res://singlenode/settings.tscn
+res://scenes/enemy_1.tscn
+res://assets/cone.tscn
+res://gds/temp_player.gd
