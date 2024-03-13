@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 var speed
-const SPRINT_SPEED = 7.5 
-const WALK_SPEED = 5.0
+const SPRINT_SPEED = 3.5 
+const WALK_SPEED = 2.0
 # const JUMP_VELOCITY = 4.5
 
 

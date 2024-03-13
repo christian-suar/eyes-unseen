@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://gds/temp_player.gd" id="1_ofada"]
 [ext_resource type="Script" path="res://gds/Node3D.gd" id="2_qym0j"]
+[ext_resource type="PackedScene" uid="uid://cug23qebfggko" path="res://assets/cone.tscn" id="3_a0f54"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b1fkt"]
 
@@ -14,12 +15,8 @@ dof_blur_far_distance = 0.5
 dof_blur_far_transition = 1.0
 dof_blur_amount = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juhfh"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0.356863)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ohwx7"]
-material = SubResource("StandardMaterial3D_juhfh")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c5uiw"]
+points = PackedVector3Array(-0.000195742, 1, -0.000195742, 0.194988, -1, -0.980814, -0.000195742, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, -0.000195742, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, -0.382733, -1, 0.923845, -0.195184, -1, 0.980619, -0.000195742, -1, 1, 0.194988, -1, 0.980619, 0.382537, -1, 0.923845, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980619, -1, 0.194988, 1, -1, -0.000195742, 0.980619, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041)
 
 [node name="TempPlayer" type="CharacterBody3D"]
 script = ExtResource("1_ofada")
@@ -38,16 +35,11 @@ script = ExtResource("2_qym0j")
 attributes = SubResource("CameraAttributesPractical_nyhxd")
 far = 2000.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.0272064, 0.99963, 0, -0.99963, 0.0272064, 0, 0.031244, -1.43233)
-visible = false
-mesh = SubResource("CylinderMesh_ohwx7")
-skeleton = NodePath("../..")
+[node name="FOV" type="Area3D" parent="Node3D"]
 
-[node name="RayCast3D" type="RayCast3D" parent="Node3D/Camera3D/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.75443e-08, 0, -8.75443e-08, -1, 0, -1.08557, 0.0218531)
-visibility_parent = NodePath("..")
-target_position = Vector3(0, -5, 0)
-collide_with_areas = true
-debug_shape_custom_color = Color(0.768627, 0.133333, 0.823529, 1)
-debug_shape_thickness = 5
+[node name="Cone" parent="Node3D/FOV" instance=ExtResource("3_a0f54")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 10, 10, 10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FOV"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1)
+shape = SubResource("ConvexPolygonShape3D_c5uiw")
