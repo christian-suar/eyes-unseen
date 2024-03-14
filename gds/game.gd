@@ -26,12 +26,12 @@ func _toggle_pause_menu(show):
 		get_parent().add_child(pause_menu)
 		
 	else:
-		# Remove the pause menu 
+		# Remove the pause menu (so one cant spam the pause menu over and over again)
 		var exists = get_node("PauseMenu")
 		if exists:
 			exists.queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	get_tree().call_group("StatueEnemy","update_target_location", player.global_position)
+func _process(_delta):
+	get_tree().call_group("EyeEnemy","update_target_location", player.global_position)

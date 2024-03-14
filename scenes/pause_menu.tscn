@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://gds/pause_menu.gd" id="1_vo8dy"]
 [ext_resource type="PackedScene" uid="uid://cp1ndlafsq2mm" path="res://sliders/blur_slider.tscn" id="2_sdhyg"]
-[ext_resource type="Script" path="res://scenes/CheckButton.gd" id="3_tdgts"]
+[ext_resource type="Script" path="res://gds/CheckButton.gd" id="3_1aw3m"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -75,7 +75,7 @@ text = "Blur Slider"
 layout_mode = 2
 button_pressed = true
 text = "Camer DOF Far Enabled"
-script = ExtResource("3_tdgts")
+script = ExtResource("3_1aw3m")
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

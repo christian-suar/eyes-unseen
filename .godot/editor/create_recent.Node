@@ -1,11 +1,12 @@
+RigidBody3D
+MeshInstance3D
+CollisionShape3D
+CharacterBody3D
 RayCast3D
 Timer
 Area3D
-MeshInstance3D
 NavigationRegion3D
 NavigationAgent3D
-CollisionShape3D
-CharacterBody3D
 CheckButton
 CheckBox
 Node
