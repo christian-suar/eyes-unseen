@@ -20,7 +20,7 @@ var t_bob = 0.0
 @onready var head = $Node3D
 @onready var head_camera = $Node3D/Camera3D
 @onready var camera = $Node3D/Camera3D
-
+@onready var can_see = false
 
 
 func _ready():
@@ -29,6 +29,7 @@ func _ready():
 	var dof_blur = preload("res://singlenode/dof_blur.tscn").instantiate()
 	var dof_strength = dof_blur.dof_blur_strength
 	change_blur(dof_strength)
+
 	
 	
 
@@ -42,6 +43,8 @@ func _unhandled_input(event: InputEvent):
 		
 		
 func _physics_process(delta):
+	
+	
 	# click the escape button to show mouse again
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -75,6 +78,20 @@ func _physics_process(delta):
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+		
+		
+		
+		
+	### SIGHT
+	
+	
+	if Input.is_action_just_pressed("see"):
+		# get globals and make new variable for increasing the blur far distance 
+		# possibly do something similar to exposure attribute
+		# make a function that steadily increases the blur to a certain amount in node3d of the camera
+		# resets, or "eye close", after 3 seconds
+		# cooldown of 4 seconds 
+		pass
 	
 	
 
@@ -82,6 +99,7 @@ func _physics_process(delta):
 	#head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	head_camera.transform.origin = _headbob(t_bob)
+	
 	move_and_slide()
 	
 	#frames
@@ -93,12 +111,13 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * bob_freq/2) * bob_amp
 	return pos
 
-
+### CAMERA STUFF
 func change_blur(strength):
 	camera.attributes.dof_blur_far_enabled = true
 	camera.attributes.dof_blur_amount = strength
 
-# detect enemy? 
+
+### DETECT ENEMIES
 
 func _on_timer_timeout():
 	var overlaps = $Node3D/Camera3D/FOV.get_overlapping_bodies()

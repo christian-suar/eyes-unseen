@@ -1,10 +1,5 @@
 extends Node
 
 var camera
-var dof_blur_amount = 0.1
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
+var dof_blur_amount = 2
+var dof_blur_far_distance = 3

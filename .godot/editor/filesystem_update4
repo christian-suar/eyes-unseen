@@ -1,11 +1,13 @@
-res://scenes/enemy_1.tscn
 res://scenes/game.tscn
 res://scenes/pause_menu.tscn
 res://sliders/blur_slider.tscn
 res://singlenode/globals.tscn
 res://singlenode/settings.tscn
+res://scenes/enemy_1.tscn
 res://scenes/temp_player.tscn
 res://assets/cone.tscn
-res://gds/game.gd
-res://gds/temp_player.gd
 res://scenes/statue_enemy_1.tscn
+res://gds/Settings.gd
+res://gds/Globals.gd
+res://gds/Node3D.gd
+res://gds/temp_player.gd
