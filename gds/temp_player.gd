@@ -25,11 +25,7 @@ var t_bob = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-	var dof_blur = preload("res://singlenode/dof_blur.tscn").instantiate()
-	var dof_strength = dof_blur.dof_blur_strength
-	change_blur(dof_strength)
-
+	
 	
 	
 
@@ -111,10 +107,6 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * bob_freq/2) * bob_amp
 	return pos
 
-### CAMERA STUFF
-func change_blur(strength):
-	camera.attributes.dof_blur_far_enabled = true
-	camera.attributes.dof_blur_amount = strength
 
 
 ### DETECT ENEMIES

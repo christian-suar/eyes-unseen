@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Panel/VBoxContainer/CheckButton.button_pressed = Settings.enabled
+	$Panel/VBoxContainer/CheckButton.button_pressed = Globals.enabled
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,4 +18,4 @@ func _on_exit_button_pressed():
 
 
 func _on_check_button_toggled(toggled_on):
-	Settings.enabled = toggled_on
+	Globals.enabled = toggled_on
