@@ -17,9 +17,8 @@ var t_bob = 0.0
 
 
 
-@onready var head = $Node3D
-@onready var head_camera = $Node3D/Camera3D
-@onready var camera = $Node3D/Camera3D
+@onready var head = $head
+@onready var head_camera = $head/Camera3D
 @onready var can_see = false
 
 
@@ -112,7 +111,7 @@ func _headbob(time) -> Vector3:
 ### DETECT ENEMIES
 
 func _on_timer_timeout():
-	var overlaps = $Node3D/Camera3D/FOV.get_overlapping_bodies()
+	var overlaps = $head/Camera3D/FOV.get_overlapping_bodies()
 	#check if enemy is there or not by going through the overlaps
 	for overlap in overlaps:
 

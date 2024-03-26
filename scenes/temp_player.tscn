@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://doxlf84fpy8ko"]
+[gd_scene load_steps=9 format=3 uid="uid://doxlf84fpy8ko"]
 
 [ext_resource type="Script" path="res://gds/temp_player.gd" id="1_ofada"]
 [ext_resource type="Script" path="res://gds/Node3D.gd" id="2_qym0j"]
 [ext_resource type="PackedScene" uid="uid://cug23qebfggko" path="res://assets/cone.tscn" id="3_a0f54"]
+[ext_resource type="Script" path="res://scenes/Interaction.gd" id="4_mp536"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b1fkt"]
 
@@ -29,23 +30,45 @@ mesh = SubResource("CapsuleMesh_b1fkt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_smh1v")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.464368, 0)
 script = ExtResource("2_qym0j")
 
-[node name="Camera3D" type="Camera3D" parent="Node3D"]
+[node name="Camera3D" type="Camera3D" parent="head"]
 attributes = SubResource("CameraAttributesPractical_nyhxd")
+current = true
 far = 100.0
 
-[node name="FOV" type="Area3D" parent="Node3D/Camera3D"]
+[node name="FOV" type="Area3D" parent="head/Camera3D"]
 
-[node name="Cone" parent="Node3D/Camera3D/FOV" instance=ExtResource("3_a0f54")]
+[node name="Cone" parent="head/Camera3D/FOV" instance=ExtResource("3_a0f54")]
 transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 0, -5)
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Camera3D/FOV"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="head/Camera3D/FOV"]
 transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, -0.203927, -4.14661)
 shape = SubResource("ConvexPolygonShape3D_gd8kl")
+
+[node name="Interaction" type="RayCast3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.164315, -0.467015)
+script = ExtResource("4_mp536")
+
+[node name="InteractUI" type="Control" parent="head/Camera3D/Interaction"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="head/Camera3D/Interaction/InteractUI"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 50
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

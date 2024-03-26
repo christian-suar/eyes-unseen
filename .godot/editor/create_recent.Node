@@ -1,3 +1,6 @@
+Label
+Control
+RayCast3D
 CollisionShape3D
 Area3D
 CSGBox3D
@@ -5,10 +8,8 @@ Node3D
 RigidBody3D
 MeshInstance3D
 CharacterBody3D
-RayCast3D
 Timer
 NavigationRegion3D
 NavigationAgent3D
 CheckButton
 CheckBox
-Node
