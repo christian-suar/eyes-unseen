@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://doxlf84fpy8ko"]
+[gd_scene load_steps=10 format=3 uid="uid://doxlf84fpy8ko"]
 
 [ext_resource type="Script" path="res://gds/temp_player.gd" id="1_ofada"]
 [ext_resource type="Script" path="res://gds/Node3D.gd" id="2_qym0j"]
 [ext_resource type="PackedScene" uid="uid://cug23qebfggko" path="res://assets/cone.tscn" id="3_a0f54"]
 [ext_resource type="Script" path="res://scenes/Interaction.gd" id="4_mp536"]
+[ext_resource type="PackedScene" uid="uid://bqyneech2sxd6" path="res://assets/fading_screen.tscn" id="5_l721s"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b1fkt"]
 
@@ -76,5 +77,7 @@ autostart = true
 [node name="VisionRayTest" type="RayCast3D" parent="."]
 target_position = Vector3(0, -1, -50)
 debug_shape_custom_color = Color(0.823529, 0, 0, 1)
+
+[node name="FadingScreen" parent="." instance=ExtResource("5_l721s")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

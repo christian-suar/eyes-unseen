@@ -5,7 +5,7 @@ extends Node3D
 func _ready():
 	Globals.camera = $Camera3D
 
-func _process(_delta):
+func _process(delta):
 	Globals.camera.attributes.dof_blur_amount = Globals.slider_value
 	Globals.camera.attributes.dof_blur_far_enabled = Globals.enabled
 	Globals.camera.attributes.dof_blur_far_distance = Globals.dof_blur_far_distance

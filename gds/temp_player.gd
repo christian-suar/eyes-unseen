@@ -20,11 +20,11 @@ var t_bob = 0.0
 @onready var head = $head
 @onready var head_camera = $head/Camera3D
 @onready var can_see = false
-
+@onready var fading_screen = $FadingScreen
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+
 	
 	
 
@@ -79,14 +79,9 @@ func _physics_process(delta):
 		
 	### SIGHT
 	
-	
 	if Input.is_action_just_pressed("see"):
-		# get globals and make new variable for increasing the blur far distance 
-		# possibly do something similar to exposure attribute
-		# make a function that steadily increases the blur to a certain amount in node3d of the camera
-		# resets, or "eye close", after 3 seconds
-		# cooldown of 4 seconds 
-		pass
+		fading_screen.visible = !fading_screen.visible
+		Globals.canSee = !Globals.canSee
 	
 	
 
@@ -130,3 +125,5 @@ func _on_timer_timeout():
 					print("i see")
 				else:
 					print("i dont")
+
+
