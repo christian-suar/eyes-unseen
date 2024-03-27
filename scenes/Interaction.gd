@@ -9,12 +9,12 @@ func _process(delta):
 	if self.is_colliding():
 
 		var coll = $".".get_collider()
-		print(coll)
+		#print(coll)
 		if coll.is_in_group("Interactable"):
 			print("is in group")
 			$InteractUI.visible = true
 			if Input.is_action_just_pressed("Interact"):
-				#coll.interact()
-				pass
+				coll.get_parent().interact()
+				
 	else:
 		$InteractUI.visible = false

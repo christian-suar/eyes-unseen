@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var player = $TempPlayer
 
+# CTRL K TO COMMENT OUT LINES
 
 
 
@@ -35,3 +36,8 @@ func _toggle_pause_menu(show):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	get_tree().call_group("EyeEnemy","update_target_location", player.global_position)
+	if Globals.area2Done:
+		var winscreen = preload("res://scenes/win_screen.tscn").instantiate()
+		get_parent().add_child(winscreen)
+		await get_tree().create_timer(1.0).timeout
+		get_tree().quit()

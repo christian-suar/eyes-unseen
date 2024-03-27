@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="eyes-unseen"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/Area1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,8 @@ Globals="*res://singlenode/globals.tscn"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=2
 
 [input]

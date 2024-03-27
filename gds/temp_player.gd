@@ -24,7 +24,7 @@ var t_bob = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	Globals.player = $"."
 	
 	
 
@@ -106,24 +106,28 @@ func _headbob(time) -> Vector3:
 ### DETECT ENEMIES
 
 func _on_timer_timeout():
-	var overlaps = $head/Camera3D/FOV.get_overlapping_bodies()
+	if Globals.canSee:
+	
+	
+		var overlaps = $head/Camera3D/FOV.get_overlapping_bodies()
 	#check if enemy is there or not by going through the overlaps
-	for overlap in overlaps:
 
-		if overlap.is_in_group("EyeEnemy"):
-			
-			var enemy_pos = overlap.global_position
-			$VisionRayTest.look_at(enemy_pos,Vector3.UP)
-			$VisionRayTest.force_raycast_update()
-			
-			print("hearuoipasfhuoipdhuo")
-			
-			if $VisionRayTest.is_colliding():
+		for overlap in overlaps:
+
+			if overlap.is_in_group("EyeEnemy"):
 				
-				var collider = $VisionRayTest.get_collider()
-				if collider.is_in_group("EyeEnemy"):
-					print("i see")
-				else:
-					print("i dont")
+				var enemy_pos = overlap.global_position
+				$VisionRayTest.look_at(enemy_pos,Vector3.UP)
+				$VisionRayTest.force_raycast_update()
+				
+				print("hearuoipasfhuoipdhuo")
+				
+				if $VisionRayTest.is_colliding():
+					
+					var collider = $VisionRayTest.get_collider()
+					if collider.is_in_group("EyeEnemy"):
+						print("i see")
+					else:
+						print("i dont")
 
 
