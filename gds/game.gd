@@ -41,3 +41,5 @@ func _process(_delta):
 		get_parent().add_child(winscreen)
 		await get_tree().create_timer(1.0).timeout
 		get_tree().quit()
+
+	

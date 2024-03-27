@@ -138,7 +138,6 @@ navigation_mesh = SubResource("NavigationMesh_aq5a4")
 use_edge_connections = false
 
 [node name="floor2" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_eohih")
 use_collision = true
 size = Vector3(20.4, 1, 20.4)

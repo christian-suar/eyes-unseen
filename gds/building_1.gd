@@ -10,4 +10,4 @@ extends Node3D
 
 func interact():
 	print("intereacted with !!!!!!!!!!!!!!!!!1111")
-	Globals.player.position = Vector3(150,1,0)
+	Globals.player.position = Vector3(120,1,0)
