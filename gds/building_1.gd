@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var physicalBuilding = $CSGBox3D
+@onready var physicalBuilding = $CSGBox3D2
 
 #
 #func _on_area_3d_body_entered(body):
