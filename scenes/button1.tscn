@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxrbnj85tg60e"]
 
-[ext_resource type="Script" path="res://scenes/button1.gd" id="1_e8jso"]
+[ext_resource type="Script" path="res://gds/button1.gd" id="1_q6wup"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfdsa"]
 albedo_color = Color(0.960784, 0.454902, 0.176471, 1)
 
 [node name="button1" type="Node3D"]
-script = ExtResource("1_e8jso")
+script = ExtResource("1_q6wup")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." groups=["Interactable"]]
 use_collision = true

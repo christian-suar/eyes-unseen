@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gds/temp_player.gd" id="1_ofada"]
 [ext_resource type="Script" path="res://gds/Node3D.gd" id="2_qym0j"]
 [ext_resource type="PackedScene" uid="uid://cug23qebfggko" path="res://assets/cone.tscn" id="3_a0f54"]
-[ext_resource type="Script" path="res://scenes/Interaction.gd" id="4_mp536"]
+[ext_resource type="Script" path="res://gds/Interaction.gd" id="4_eq6wn"]
 [ext_resource type="PackedScene" uid="uid://bqyneech2sxd6" path="res://assets/fading_screen.tscn" id="5_l721s"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b1fkt"]
@@ -47,7 +47,7 @@ shape = SubResource("ConvexPolygonShape3D_gd8kl")
 
 [node name="Interaction" type="RayCast3D" parent="head/Camera3D"]
 transform = Transform3D(1, -0.000925024, 4.04341e-11, 0, -4.37114e-08, -1, 0.000925024, 1, -4.37114e-08, 0, 0.00127584, -0.367801)
-script = ExtResource("4_mp536")
+script = ExtResource("4_eq6wn")
 
 [node name="InteractUI" type="Control" parent="head/Camera3D/Interaction"]
 visible = false
