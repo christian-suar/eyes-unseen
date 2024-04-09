@@ -1,7 +1,7 @@
 extends Node3D
 
 
-var shake_fade = 0.05     # How quickly the shake fades out
+var shake_fade = 0.09     # How quickly the shake fades out
 var rng= RandomNumberGenerator.new()
 
 func _process(delta):

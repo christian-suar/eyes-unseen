@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://doxlf84fpy8ko"]
+[gd_scene load_steps=11 format=3 uid="uid://doxlf84fpy8ko"]
 
 [ext_resource type="Script" path="res://gds/temp_player.gd" id="1_ofada"]
 [ext_resource type="Script" path="res://gds/Node3D.gd" id="2_qym0j"]
 [ext_resource type="PackedScene" uid="uid://cug23qebfggko" path="res://assets/cone.tscn" id="3_a0f54"]
-[ext_resource type="Script" path="res://scenes/Camera3D.gd" id="3_k6kvd"]
 [ext_resource type="Script" path="res://gds/Interaction.gd" id="4_eq6wn"]
 [ext_resource type="PackedScene" uid="uid://bqyneech2sxd6" path="res://assets/fading_screen.tscn" id="5_l721s"]
 
@@ -39,7 +38,6 @@ script = ExtResource("2_qym0j")
 current = true
 fov = 90.0
 far = 75.0
-script = ExtResource("3_k6kvd")
 
 [node name="FOV" type="Area3D" parent="head/Camera3D"]
 visible = false
@@ -88,7 +86,7 @@ debug_shape_custom_color = Color(0.823529, 0, 0, 1)
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 shadow_enabled = true
 distance_fade_enabled = true
-omni_range = 10.0
+omni_range = 20.0
 omni_attenuation = 2.14355
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -15,8 +15,12 @@ var area2Done = false
 var area2Button1 = false
 var area2Button2 = false
 var area2Button3 = false
+var rush = false
+
+
+var in_area_2 = false
+
 var losing_it = false
-var in_area_2 = true
 var can_see = false
 
 var area3Done = false

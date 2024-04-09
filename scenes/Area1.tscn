@@ -1,14 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://bbigl8dbutoa2"]
+[gd_scene load_steps=23 format=3 uid="uid://bbigl8dbutoa2"]
 
 [ext_resource type="Script" path="res://gds/game.gd" id="1_ska0y"]
+[ext_resource type="Script" path="res://scenes/Area1.gd" id="2_185gw"]
 [ext_resource type="MeshLibrary" uid="uid://d4jp675fh6xv4" path="res://gas2/BlendModel2.tres" id="2_gua2w"]
 [ext_resource type="PackedScene" uid="uid://dt0yh0ycitwec" path="res://scenes/statue_enemy_1.tscn" id="2_yqd2f"]
 [ext_resource type="PackedScene" uid="uid://dsc5tl8ld5xyo" path="res://scenes/building_1.tscn" id="3_8cyt7"]
 [ext_resource type="PackedScene" uid="uid://doxlf84fpy8ko" path="res://scenes/temp_player.tscn" id="4_vtth7"]
 [ext_resource type="PackedScene" uid="uid://c8fd6mxpxsr8u" path="res://scenes/enemy_1.tscn" id="5_fq4h4"]
+[ext_resource type="Script" path="res://scenes/Area2.gd" id="5_git62"]
 [ext_resource type="PackedScene" uid="uid://d2op6tg68by3e" path="res://scenes/building_2.tscn" id="5_wpv3w"]
 [ext_resource type="PackedScene" uid="uid://dxrbnj85tg60e" path="res://scenes/button1.tscn" id="6_acrob"]
+[ext_resource type="Script" path="res://scenes/button1.gd" id="8_1u2jw"]
 [ext_resource type="PackedScene" uid="uid://in773k2ihjby" path="res://scenes/intro.tscn" id="8_8opor"]
+[ext_resource type="Script" path="res://scenes/button2.gd" id="9_6shv2"]
+[ext_resource type="Script" path="res://scenes/button3.gd" id="10_b74gt"]
 [ext_resource type="PackedScene" uid="uid://c8fi8tbqvl6t8" path="res://scenes/doom.tscn" id="10_scys2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_iia8s"]
@@ -47,6 +52,7 @@ ambient_light_energy = 0.1
 script = ExtResource("1_ska0y")
 
 [node name="Area1" type="Node3D" parent="."]
+script = ExtResource("2_185gw")
 
 [node name="Area1NavRegion" type="NavigationRegion3D" parent="Area1"]
 navigation_mesh = SubResource("NavigationMesh_iia8s")
@@ -142,6 +148,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Area2" type="Node3D" parent="."]
+script = ExtResource("5_git62")
 
 [node name="Area2NavRegion" type="NavigationRegion3D" parent="Area2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.3, 0, 0)
@@ -188,13 +195,16 @@ data = {
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -45, 1.3, 0)
 
 [node name="button1" parent="Area2/Area2NavRegion" instance=ExtResource("6_acrob")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.4, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.9, -32)
+script = ExtResource("8_1u2jw")
 
 [node name="button2" parent="Area2/Area2NavRegion" instance=ExtResource("6_acrob")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 1.4, -0.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0.9, -0.8)
+script = ExtResource("9_6shv2")
 
 [node name="button3" parent="Area2/Area2NavRegion" instance=ExtResource("6_acrob")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.4, 32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.9, 32)
+script = ExtResource("10_b74gt")
 
 [node name="Area3" type="Node3D" parent="."]
 
@@ -232,15 +242,14 @@ size = Vector3(1, 10, 100)
 environment = SubResource("Environment_skmeg")
 
 [node name="TempPlayer" parent="." instance=ExtResource("4_vtth7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.6, 1.05115, 4.42566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 1.05115, 4.42566)
 
 [node name="Enemy1" parent="." instance=ExtResource("5_fq4h4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3441, 0.052853, -29.513)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_energy = 0.0
-light_volumetric_fog_energy = 0.0
+light_energy = 0.02
 shadow_opacity = 0.75
 directional_shadow_mode = 1
 directional_shadow_max_distance = 10.0
