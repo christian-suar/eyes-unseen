@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc3l3fyu4s775"]
+[gd_scene load_steps=5 format=3 uid="uid://cc3l3fyu4s775"]
 
 [ext_resource type="PackedScene" uid="uid://cug23qebfggko" path="res://assets/cone.tscn" id="1_cndox"]
+[ext_resource type="Script" path="res://assets/models/statue.gd" id="1_s7voe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uedao"]
 transparency = 1
@@ -14,18 +15,19 @@ backlight = Color(1, 1, 1, 1)
 albedo_color = Color(0.34902, 0.321569, 0.27451, 1)
 
 [node name="Statue" type="Node3D"]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 3, 0)
+script = ExtResource("1_s7voe")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 0)
 material = SubResource("StandardMaterial3D_uedao")
 
 [node name="Cone" parent="." instance=ExtResource("1_cndox")]
-transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0.3, 0)
 material_override = SubResource("StandardMaterial3D_gxgqj")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.04, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.84, 0)
 light_color = Color(0.917647, 0, 0, 1)
 omni_range = 50.0
 omni_attenuation = 0.68302

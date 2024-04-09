@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg4hjqo1vkyg7"
+path="res://.godot/imported/Video Apr 06 2024, 8 07 21 PM.mp3-a3766b38b69fe7979ae1464e919038dc.mp3str"
+
+[deps]
+
+source_file="res://assets/Video Apr 06 2024, 8 07 21 PM.mp3"
+dest_files=["res://.godot/imported/Video Apr 06 2024, 8 07 21 PM.mp3-a3766b38b69fe7979ae1464e919038dc.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

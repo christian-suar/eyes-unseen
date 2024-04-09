@@ -3,9 +3,6 @@ extends Node
 var camera
 var player
 
-var playerPos 
-var enemy1Pos
-
 #var dof_blur_far_distance = 3
 #var slider_value = 0
 #var enabled = false
@@ -13,6 +10,16 @@ var enemy1Pos
 
 var canSee = false
 
-var area1Done = false 
+
 var area2Done = false
+var area2Button1 = false
+var area2Button2 = false
+var area2Button3 = false
+var losing_it = false
+var in_area_2 = true
+var can_see = false
+
 var area3Done = false
+var secretArea = false
+
+var craze = 0.0

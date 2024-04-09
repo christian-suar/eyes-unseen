@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var speed
-const SPRINT_SPEED = 6
+const SPRINT_SPEED = 9
 const WALK_SPEED = 2.0
 # const JUMP_VELOCITY = 4.5
 
@@ -14,7 +14,7 @@ var sensitivity = 0.004
 const bob_freq = 2.5
 const bob_amp = 0.08
 var t_bob = 0.0
-
+var craze = 12
 
 
 @onready var head = $head
@@ -38,8 +38,7 @@ func _unhandled_input(event: InputEvent):
 		
 		
 func _physics_process(delta):
-	
-	
+
 	# click the escape button to show mouse again
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -98,7 +97,7 @@ func _physics_process(delta):
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * bob_freq) * bob_amp
-	pos.x = cos(time * bob_freq/2) * bob_amp
+	pos.x = cos(time * bob_freq/2) * bob_amp 
 	return pos
 
 
@@ -108,16 +107,15 @@ func _headbob(time) -> Vector3:
 func _on_timer_timeout():
 	if Globals.canSee:
 	
-	
 		var overlaps = $head/Camera3D/FOV.get_overlapping_bodies()
 	#check if enemy is there or not by going through the overlaps
 
 		for overlap in overlaps:
 
-			if overlap.is_in_group("EyeEnemy"):
+			if overlap.is_in_group("Statue"):
 				
 				var enemy_pos = overlap.global_position
-				$VisionRayTest.look_at(enemy_pos,Vector3.UP)
+				$VisionRayTest.look_at(Vector3(enemy_pos.x,enemy_pos.y+9,enemy_pos.z),Vector3.UP)
 				$VisionRayTest.force_raycast_update()
 				
 				print("hearuoipasfhuoipdhuo")
@@ -125,9 +123,12 @@ func _on_timer_timeout():
 				if $VisionRayTest.is_colliding():
 					
 					var collider = $VisionRayTest.get_collider()
-					if collider.is_in_group("EyeEnemy"):
+					if collider.is_in_group("Statue"):
 						print("i see")
+						Globals.losing_it = false
 					else:
 						print("i dont")
+						Globals.losing_it = true
+
 
 

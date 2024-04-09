@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8fi8tbqvl6t8"]
+
+[ext_resource type="Script" path="res://gds/doom.gd" id="1_l8m1l"]
+
+[node name="Doom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_l8m1l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 1
+color = Color(0.482353, 0.0156863, 0, 0)
