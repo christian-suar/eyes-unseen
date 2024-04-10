@@ -2,6 +2,9 @@ extends Node3D
 
 
 func interact():
-	print("intereacted withasfddsffdsaasdafds !!!!!!!!!!!!!!!!!1111")
+	print("button 2")
 	Globals.area2Button2 = true
-	self.queue_free()
+	if is_instance_valid($"."):
+		queue_free() 
+	else:
+		print("yeah im the problem ")

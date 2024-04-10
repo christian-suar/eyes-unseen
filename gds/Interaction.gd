@@ -4,11 +4,11 @@ extends RayCast3D
 func _ready():
 	add_exception($"../../..")
 func _process(delta):
-
+	var coll = get_collider()
 
 	if self.is_colliding():
+		coll = get_collider()
 
-		var coll = $".".get_collider()
 		#print(coll)
 		if coll.is_in_group("Interactable"):
 			#print("is in group")

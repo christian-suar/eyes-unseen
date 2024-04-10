@@ -5,19 +5,19 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfdsa"]
 albedo_color = Color(0.960784, 0.454902, 0.176471, 1)
 
-[node name="button1" type="Node3D"]
+[node name="button1" type="Node3D" groups=["Interactable"]]
 script = ExtResource("1_q6wup")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." groups=["Interactable"]]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D" groups=["Interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976019, 0)
 cast_shadow = 0
 size = Vector3(0.5, 0.5, 0.5)
 material = SubResource("StandardMaterial3D_cfdsa")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="SpotLight3D" type="SpotLight3D" parent="." groups=["Interactable"]]
 transform = Transform3D(1, 0, 0, 0, -0.00146608, 0.999999, 0, -0.999999, -0.00146608, 0, 6.98082, 0)
 light_energy = 4.0
 light_indirect_energy = 2.0
