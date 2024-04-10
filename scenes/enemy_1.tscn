@@ -29,6 +29,7 @@ transform = Transform3D(1.00338, 0, 0, 0, 1.00338, 0, 0, 0, 1.00338, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_l5phf")
-disabled = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

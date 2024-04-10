@@ -11,6 +11,11 @@ func _process(delta):
 		var new_velocity = (next_location - current_location).normalized() * speed
 		rotation = next_location
 		velocity = velocity.move_toward(new_velocity, .25)
+		var overlaps = $Hitbox.get_overlapping_bodies()
+		for body in overlaps:
+			if body == Globals.player:
+				Globals.craze += .02
+		
 		move_and_slide()
 	else:
 		pass
@@ -20,3 +25,8 @@ func update_target_location(target_location):
 	
 	
 	
+
+
+func _on_hitbox_body_entered(body):
+	if body == Globals.player:
+		Globals.craze += .6
