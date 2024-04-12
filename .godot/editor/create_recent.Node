@@ -1,3 +1,4 @@
+AudioStreamPlayer3D
 ColorRect
 Panel
 HBoxContainer
@@ -5,11 +6,9 @@ Node3D
 VisibleOnScreenNotifier3D
 CollisionShape3D
 Area3D
-AudioStreamPlayer3D
 Label
 VBoxContainer
 VSeparator
 BoxContainer
 Container
 GridMap
-NavigationObstacle3D

@@ -18,7 +18,7 @@ var area2Button3 = false
 var rush = false
 
 
-var in_area_2 = true
+var in_area_2 = false
 
 var losing_it = false
 var can_see = false

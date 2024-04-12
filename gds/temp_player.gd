@@ -118,8 +118,6 @@ func _on_timer_timeout():
 				$VisionRayTest.look_at(Vector3(enemy_pos.x,enemy_pos.y+9,enemy_pos.z),Vector3.UP)
 				$VisionRayTest.force_raycast_update()
 				
-				print("hearuoipasfhuoipdhuo")
-				
 				if $VisionRayTest.is_colliding():
 					
 					var collider = $VisionRayTest.get_collider()

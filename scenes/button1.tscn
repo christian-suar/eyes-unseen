@@ -22,5 +22,5 @@ transform = Transform3D(1, 0, 0, 0, -0.00146608, 0.999999, 0, -0.999999, -0.0014
 light_energy = 4.0
 light_indirect_energy = 2.0
 distance_fade_enabled = true
-spot_range = 10.0
+spot_range = 7.0
 spot_angle_attenuation = 1.36604

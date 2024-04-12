@@ -9,6 +9,9 @@ extends StaticBody3D
 		#Globals.craze += (.02 * delta)
 		#print(Globals.losing_it)
 	#print(Globals.craze)
-
-
+func _process(delta):
+	if Globals.rush:
+		visible = false
+		$CollisionShape3D.disabled = true
+		$ScaryOrbSound.playing = false
 

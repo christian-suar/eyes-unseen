@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8fd6mxpxsr8u"]
+[gd_scene load_steps=8 format=3 uid="uid://c8fd6mxpxsr8u"]
 
 [ext_resource type="Texture2D" uid="uid://b1q4yjh5st4fy" path="res://icon.svg" id="1_i7hfb"]
 [ext_resource type="Script" path="res://gds/enemy_1.gd" id="1_lfbtu"]
+[ext_resource type="AudioStream" uid="uid://br1a1anmgou7b" path="res://[ youtube.com ] 137+251 - Shepard Tone [Audio Illusion].ogg" id="3_dniw4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2am7"]
 albedo_texture = ExtResource("1_i7hfb")
@@ -31,5 +32,11 @@ transform = Transform3D(1.00338, 0, 0, 0, 1.00338, 0, 0, 0, 1.00338, 0, 0, 0)
 shape = SubResource("BoxShape3D_l5phf")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_dniw4")
+max_db = 2.0
+autoplay = true
+max_distance = 15.0
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

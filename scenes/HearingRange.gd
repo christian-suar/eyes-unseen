@@ -7,9 +7,9 @@ func _process(delta):
 
 		if body == Globals.player:
 			
-			if Globals.losing_it or Globals.can_see==false:
+			if Globals.losing_it or Globals.can_see==false or Globals.rush == true:
 				if Globals.in_area_2:
-
+				
 					Globals.craze += (.06 * delta)
 				
 	if Globals.can_see == false:

@@ -14,7 +14,7 @@ func _process(delta):
 		var overlaps = $Hitbox.get_overlapping_bodies()
 		for body in overlaps:
 			if body == Globals.player:
-				Globals.craze += .02
+				Globals.craze += 1
 		
 		move_and_slide()
 	else:

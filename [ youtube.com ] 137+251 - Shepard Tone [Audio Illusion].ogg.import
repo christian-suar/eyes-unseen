@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://br1a1anmgou7b"
+path="res://.godot/imported/[ youtube.com ] 137+251 - Shepard Tone [Audio Illusion].ogg-48914bd2beb84d0a9d7fbb0644481534.oggvorbisstr"
+
+[deps]
+
+source_file="res://[ youtube.com ] 137+251 - Shepard Tone [Audio Illusion].ogg"
+dest_files=["res://.godot/imported/[ youtube.com ] 137+251 - Shepard Tone [Audio Illusion].ogg-48914bd2beb84d0a9d7fbb0644481534.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

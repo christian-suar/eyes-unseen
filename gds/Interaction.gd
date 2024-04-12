@@ -6,14 +6,14 @@ func _ready():
 func _process(delta):
 	var coll = get_collider()
 
-	if self.is_colliding():
+	if is_colliding():
 		coll = get_collider()
 
 		#print(coll)
 		if coll.is_in_group("Interactable"):
 			#print("is in group")
 			$InteractUI.visible = true
-			if Input.is_action_just_pressed("Interact"):
+			if Input.is_action_just_pressed("Interact") and is_instance_valid(coll):
 				coll.get_parent().interact()
 	
 		else:
