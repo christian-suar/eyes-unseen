@@ -6,7 +6,7 @@ var speed = 4
 func _process(delta):
 
 	if Globals.in_area_with_enemies:
-		if Globals.canSee:
+		if Globals.canSee and Globals.alternate==false:
 			#current position - next location = velocity change towards new target
 			var next_location = nav_agent.get_next_path_position()
 			var current_location = global_position

@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvsb8fmvfaax"]
+[gd_scene load_steps=9 format=3 uid="uid://dvsb8fmvfaax"]
 
 [ext_resource type="Script" path="res://Button8_WIN.gd" id="1_4biey"]
+[ext_resource type="Script" path="res://scenes/WINNERBUTTON.gd" id="1_ypdwf"]
+[ext_resource type="AudioStream" uid="uid://c0lmcc6kx5gcm" path="res://ding.mp3" id="3_6kbc6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuq1k"]
 resource_name = "Material.002"
@@ -77,6 +79,7 @@ points = PackedVector3Array(0.451892, 0.0485247, 0.116083, -0.483804, 0.0381442,
 
 [node name="LowPolyButton8" type="Node3D" groups=["Interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+script = ExtResource("1_ypdwf")
 
 [node name="Button8" type="MeshInstance3D" parent="." groups=["Interactable"]]
 mesh = SubResource("ArrayMesh_bnns4")
@@ -94,3 +97,8 @@ light_energy = 2.0
 light_size = 1.0
 light_specular = 0.0
 spot_range = 8.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_6kbc6")
+unit_size = 100.0
+max_distance = 100.0

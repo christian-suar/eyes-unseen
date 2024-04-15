@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gds/enemy_1.gd" id="1_lfbtu"]
 [ext_resource type="Script" path="res://gds/CrazeFactor.gd" id="2_7i8ew"]
 [ext_resource type="Texture2D" uid="uid://b1q4yjh5st4fy" path="res://icon.svg" id="2_qrjir"]
-[ext_resource type="AudioStream" uid="uid://br1a1anmgou7b" path="res://[ youtube.com ] 137+251 - Shepard Tone [Audio Illusion].ogg" id="3_dniw4"]
+[ext_resource type="AudioStream" uid="uid://br1a1anmgou7b" path="res://shepard.ogg" id="3_dniw4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcg2g"]
 transparency = 1

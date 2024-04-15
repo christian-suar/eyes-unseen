@@ -26,6 +26,11 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_font_sizes/font_size = 60
-text = "youre winner 11!"
+text = "youre winner 11!
+
+or are you?
+
+savor your success a little longer
+(wait after completing both areas)"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -32,7 +32,7 @@ var area3Button3 = false
 var area3Button4 = false
 var area3Button5 = false
 var area3Button6 = false
-
+var alternate = false
 
 
 var craze = 0.0

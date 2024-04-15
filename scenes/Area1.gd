@@ -19,4 +19,7 @@ func _process(delta):
 		winner.position = Vector3(0,0,5)
 		get_parent().add_child(winner)
 		finish1 = false
+		await get_tree().create_timer(5.0).timeout
+		winner.alternate()
+		finish1 = false
 

@@ -3,7 +3,8 @@ extends Node3D
 
 var shake_fade = 0.09     # How quickly the shake fades out
 var rng= RandomNumberGenerator.new()
-
+func _ready():
+	Globals.camera = $Camera3D
 func _process(delta):
 	var shake_strength = Globals.craze 
 	if Globals.in_area_with_enemies and Globals.canSee == false:
