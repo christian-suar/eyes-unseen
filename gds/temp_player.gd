@@ -38,7 +38,7 @@ func _unhandled_input(event: InputEvent):
 		
 		
 func _physics_process(delta):
-
+	#print(position)
 	# click the escape button to show mouse again
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

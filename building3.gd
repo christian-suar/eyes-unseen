@@ -9,4 +9,4 @@ extends Node3D
 		#print("player detected")
 
 func interact():
-	print("hi")
+	Globals.player.position = Vector3(-122,1,0)

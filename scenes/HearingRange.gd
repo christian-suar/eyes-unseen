@@ -6,12 +6,14 @@ func _process(delta):
 	for body in bodies:
 
 		if body == Globals.player:
-			
+		
+			print(Globals.losing_it)
 			if Globals.losing_it or Globals.can_see==false or Globals.rush == true:
+			
 				if Globals.in_area_2:
 				
 					Globals.craze += (.06 * delta)
-				
+					print(Globals.craze)
 	if Globals.can_see == false:
 		Globals.losing_it = true
 

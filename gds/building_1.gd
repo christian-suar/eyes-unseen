@@ -12,4 +12,5 @@ func interact():
 	print("intereacted with !!!!!!!!!!!!!!!!!1111")
 	Globals.player.global_position = Vector3(76,1,0)
 	Globals.in_area_2 = true
-	print(Globals.player.global_position)
+	Globals.in_area_with_enemies = false
+	#print(Globals.player.global_position)

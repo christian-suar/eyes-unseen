@@ -6,7 +6,10 @@ var rng= RandomNumberGenerator.new()
 
 func _process(delta):
 	var shake_strength = Globals.craze 
-
+	if Globals.in_area_with_enemies and Globals.canSee == false:
+		shake_fade = 0.5
+	else:
+		shake_fade = 0.09
 	var offset = Vector3(
 		rng.randf_range(-shake_strength, shake_strength),
 		rng.randf_range(-shake_strength, shake_strength),
@@ -14,7 +17,7 @@ func _process(delta):
 	)
 	$Camera3D.position += offset
 
-	if Globals.losing_it == false or Globals.in_area_2 == false:
+	if Globals.losing_it == false or Globals.in_area_2 == false or Globals.canSee == false:
 		# Fade the shake effect over time
 		shake_strength -= shake_fade * delta
 		shake_strength = max(0.0, shake_strength)

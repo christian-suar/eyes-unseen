@@ -28,7 +28,7 @@ stream = ExtResource("2_uuno8")
 volume_db = 5.0
 max_db = 5.0
 autoplay = true
-max_distance = 50.0
+max_distance = 80.0
 
 [node name="HearingRange" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0125766, 0)
